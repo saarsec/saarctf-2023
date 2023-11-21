@@ -1,0 +1,12 @@
+---
+
+version: "2"
+
+services:
+  service:
+    image: "saarsec/telework"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "30000:30000"

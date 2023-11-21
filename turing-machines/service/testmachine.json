@@ -1,0 +1,22 @@
+{
+  "name": "strlen",
+  "states": [
+    {
+      "name": "initial",
+      "actions": [
+        {"c": "\u0000", "a": [], "h": 1, "s": "write"},
+        {"h": 1, "a": ["r0=r0+1"], "s": "initial"}
+      ]
+    },
+    {
+      "name": "write",
+      "actions": [
+        {"a": ["h=r0"], "s": "end"}
+      ]
+    },
+    {
+      "name": "end",
+      "actions": []
+    }
+  ]
+}

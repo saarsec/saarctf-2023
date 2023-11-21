@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>New Turing Machine</h1>
+
+    <form method="POST" action="/machine/new">
+        {{template "machine_editor" .machine}}
+        <button type="submit" class="btn btn-primary">Create Machine!</button>
+    </form>
+
+    {{template "docs"}}
+</div>

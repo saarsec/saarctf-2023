@@ -1,0 +1,15 @@
+.hlist-item {
+  //float: left;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.hlist>.hlist-item:nth-child(-n+5) {
+  font-size: 1.2rem;
+}
+.hlist>.hlist-item:nth-child(5) {
+  &::after{
+    content: "\a";
+    white-space: pre;
+  }
+}

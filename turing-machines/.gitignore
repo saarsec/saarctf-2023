@@ -1,0 +1,14 @@
+/.idea
+/.nobadge
+/public/
+/build_output/
+/docker-container-infos.txt
+/service/turing-machines
+/service/turingcode/cmake-build*
+/service/turingcode/.idea
+/service/turingcode/main
+/service/turingcode/testcode*
+/exploits/machine.json
+/exploits/tape
+/service/data
+/checkers/__pycache__

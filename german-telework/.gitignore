@@ -1,0 +1,17 @@
+/.idea
+/.nobadge
+/public/
+/build_output/
+/docker-container-infos.txt
+/service/sender
+/service/listener
+/service/a.out
+*.class
+# C# stuff
+bin/
+obj/
+# general data
+data/
+# python
+*.pyc
+venv/

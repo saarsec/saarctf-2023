@@ -1,0 +1,89 @@
+<app-error-list [list]="errors"></app-error-list>
+<div *ngIf="partyInfo">
+    <div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+        <div class="card-header bg-opacity-100 bg-dark">
+            <h5 *ngIf="!partyInfo.name" class="card-title mt-1">Welcome to the unnamed party!</h5>
+            <h5 *ngIf="partyInfo.name" class="card-title mt-1">Welcome to the party: {{partyInfo.name}}</h5>
+        </div>
+
+        <div class="card-body">
+            <p class="card-text lead">Organized by {{partyInfo.organisator}}</p>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-dark">Party Link</span>
+                <input class="form-control bg-dark" readonly [value]="url">
+            </div>
+
+            <form *ngIf="!partyInfo.name">
+                <div class="input-group mb-3">
+                    <label for="partyname" class="input-group-text bg-dark">Give this party a name:</label>
+                    <input class="form-control" id="partyname" name="partyname" [(ngModel)]="partyname">
+                    <button type="submit" class="btn btn-primary" (click)="setName(partyname)">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+        <div class="card-body">
+            <h5 class="card-title">Who's coming?</h5>
+            <p class="card-text hlist mb-3" *ngIf="partyInfo.guests && partyInfo.guests.length"><span *ngFor="let p of partyInfo.guests">{{p}}</span>
+            </p>
+            <p class="card-text mb-3" *ngIf="!partyInfo.guests || partyInfo.guests.length == 0">
+                So far, no guests are on the list. Be the first!
+            </p>
+            <button *ngIf="!currentUserParticipating" (click)="participate()" class="btn btn-primary">I'll come!</button>
+        </div>
+
+        <div class="card-body">
+            <h5 class="card-title">What will we eat?</h5>
+            <p class="card-text hlist mb-3" *ngIf="partyInfo.food && partyInfo.food.length"><span *ngFor="let p of partyInfo.food">{{p}}</span></p>
+            <p class="card-text mb-3" *ngIf="!partyInfo.food || partyInfo.food.length == 0">
+                So far, none of your guests volunteered to bring some food. Be the first one!
+            </p>
+            <form>
+                <div class="input-group mb-3">
+                    <label for="food" class="input-group-text bg-dark">I'll bring:</label>
+                    <input class="form-control" id="food" name="food" [(ngModel)]="food" placeholder="Schwenker">
+                    <button type="submit" class="btn btn-primary" (click)="addFood(food)">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <app-error-list [list]="errorsFire"></app-error-list>
+    <div class="card mt-5 mb-5 bg-dark bg-opacity-75" *ngIf="!partyInfo.fire_id">
+        <div class="card-header bg-opacity-100 bg-dark">
+            <h5 class="card-title mt-1">Campfire Registration</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                After recent incidents with barbecue fires in the wild, state law requires you to register every fire you make beforehand.
+                RedisBBQ can do this registration for you, and inform the local firefighters if your party goes out of control.
+                We'll never share your location with anyone except in cases of fire.
+            </p>
+            <form>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="fireCountry" name="fireCountry" [(ngModel)]="fireCountry" placeholder="Country">
+                    <label for="fireCountry" class="form-label">Your Country</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="fireLocation" name="fireLocation" [(ngModel)]="fireLocation" placeholder="Location">
+                    <label for="fireLocation" class="form-label">The Location of your Campfire</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="fireContent" name="fireContent" [(ngModel)]="fireContent" placeholder="Content">
+                    <label for="fireContent" class="form-label">What are you gonna burn?</label>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="createFire(fireCountry, fireLocation, fireContent)">Register Campfire</button>
+            </form>
+        </div>
+    </div>
+
+    <app-campfire [fire_id]="partyInfo.fire_id" *ngIf="partyInfo.fire_id"></app-campfire>
+
+</div>
+
+<div class="spinner-border" role="status" *ngIf="!partyInfo">
+    <span class="visually-hidden">Loading...</span>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+    <title>TuringMachines++</title>
+</head>
+<body>
+
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <div class="container d-flex flex-wrap">
+    <a href="/" class="d-flex align-items-center mb-3 me-md-auto text-dark text-decoration-none">
+        <span class="fs-3">TuringMachines++</span>
+    </a>
+    <div class="col-md-3 text-end">
+        <a href="/machine/new" class="btn btn-outline-primary me-2">New Machine</a>
+    </div>
+    </div>
+</header>
+
+{{if .error}}
+<div class="alert alert-danger" role="alert">{{.error}}</div>
+{{end}}
+
+{{embed}}
+
+<script defer src="/static/js/editor.js"></script>
+</body>
+</html>

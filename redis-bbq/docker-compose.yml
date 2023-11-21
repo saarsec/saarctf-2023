@@ -1,0 +1,12 @@
+---
+
+version: "2"
+
+services:
+  service:
+    image: "saarsec/redisbbq"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "16379:16379"

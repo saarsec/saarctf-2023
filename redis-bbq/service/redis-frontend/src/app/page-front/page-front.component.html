@@ -1,0 +1,56 @@
+<div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+    <div class="card-body">
+        <p class="lead">RedisBBQ is <strong>your place</strong> to organize your next barbecue party.</p>
+        <p class="card-text">
+            Go out and grill with your friends!<br/>
+            Food organization and fire protection included.
+        </p>
+    </div>
+</div>
+
+<app-error-list [list]="errors"></app-error-list>
+<div class="row justify-content-center">
+    <div class="card mt-5 mb-5 col-lg-4 col-md-6 bg-dark">
+        <div class="card-header">Sign up to RedisBBQ!</div>
+        <div class="card-body p-3">
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" minlength="3" maxlength="64"
+                           placeholder="Username">
+                    <label for="username">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" minlength="8" maxlength="64"
+                           placeholder="Password">
+                    <label for="password">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary float-start" (click)="login()">Login</button>
+                <button type="submit" class="btn btn-outline-primary float-end" (click)="register()">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<app-error-list [list]="errorNewestUsers"></app-error-list>
+<div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+    <div class="card-body">
+        <h5 class="card-title">Our newest customers</h5>
+        <p class="fw-light text-light">We have plenty of satisfied customers! Meet some of them:</p>
+        <div class="hlist card-text">
+            <span *ngFor="let user of newestUsers" class="hlist-item">{{user}}</span>
+        </div>
+    </div>
+</div>
+
+<app-error-list [list]="errorNewestCountries"></app-error-list>
+<div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+    <div class="card-body">
+        <h5 class="card-title">Celebrating barbecues all over the world!</h5>
+        <p class="fw-light text-light">Our users organize barbecues in any place of the world! Find a location near you:</p>
+        <div class="hlist">
+            <span *ngFor="let country of newestCountries" class="hlist-item">{{country}}</span>
+        </div>
+    </div>
+</div>

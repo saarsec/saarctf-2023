@@ -1,0 +1,96 @@
+/*!
+ * Bootstrap v5.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
+@import "bootstrap/scss/functions";
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #0d6efd !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+// CUSTOM VARIABLES
+$table-border-factor:         .1 !default;
+$min-contrast-ratio:   4.5 !default;
+$color-contrast-dark:      $black !default;
+$color-contrast-light:     $white !default;
+
+$dark: darken($gray-900, 5%);
+$body-bg: $dark;
+$body-color: $white;
+$body-emphasis-color: $white;
+$primary: $orange;
+$border-color: mix(color-contrast(opaque($body-bg, $dark)), $dark, percentage($table-border-factor));
+
+$enable-dark-mode: false;
+
+// END CUSTOM VARIABLES
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Layout & components
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+//@import "bootstrap/scss/dropdown";
+//@import "bootstrap/scss/button-group";
+//@import "bootstrap/scss/nav";
+//@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+//@import "bootstrap/scss/accordion";
+//@import "bootstrap/scss/breadcrumb";
+//@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+//@import "bootstrap/scss/progress";
+//@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+//@import "bootstrap/scss/toasts";
+//@import "bootstrap/scss/modal";
+//@import "bootstrap/scss/tooltip";
+//@import "bootstrap/scss/popover";
+//@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+//@import "bootstrap/scss/offcanvas";
+//@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+// scss-docs-end import-stack

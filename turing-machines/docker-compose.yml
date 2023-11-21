@@ -1,0 +1,12 @@
+---
+
+version: "2"
+
+services:
+  service:
+    image: "saarsec/turingmachines"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "2080:2080"

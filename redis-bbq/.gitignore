@@ -1,0 +1,15 @@
+/redismodule.h
+/*.so
+/redis-5.*
+/redis-6.*
+/*.rdb
+/*.aof
+/users.acl
+/__pycache__/
+/redisbbq-frontend
+/.idea
+/.nobadge
+/public/
+/build_output/
+/docker-container-infos.txt
+/checkers/__pycache__

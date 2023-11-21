@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Your Turing Machine</h1>
+    <p><a href="/machines/{{.id}}">#{{.id}}</a></p>
+    <br/>
+
+    <form method="POST" action="/machine/update">
+        <div class="mb-3">
+            <label for="link" class="form-label">Your Machine Link</label>
+            <input type="text" id="link" value="{{.base}}/machines/{{.id}}" class="form-control" readonly onclick="this.select();"/>
+        </div>
+
+        <br />
+
+        <input type="hidden" name="ident" value="{{.id}}"/>
+        {{template "machine_editor" .machine}}
+        <button type="submit" class="btn btn-outline-primary" name="action" value="update">Update Machine</button>
+        <button type="submit" class="btn btn-outline-primary" name="action" value="compile">Compile to C++</button>
+        <button type="submit" class="btn btn-outline-primary" name="action" value="test">Test Machine</button>
+    </form>
+
+    <p class="mt-4">
+        To use the compiled TuringMachine in your applications,
+        please download <a href="/static/turingmachine.h">the TuringMachines++ API</a>.
+    </p>
+
+    {{template "docs"}}
+</div>

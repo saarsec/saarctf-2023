@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-Alternate.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-Four.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-Ligatures.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-One.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-Ornaments.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-SmallCaps.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-Three.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Extra LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLT-Two.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Extra LT Pro';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Zapfino Extra LT Pro'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoExtraLTPro.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Forte LT Pro';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Zapfino Forte LT Pro'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoForteLTPro.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Forte LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Forte LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoForteLT-Alternate.woff') format('woff');
+}
+@font-face {
+    font-family: 'Zapfino Forte LT';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Zapfino Forte LT'), url('https://fonts.cdnfonts.com/s/58244/ZapfinoForteLT-One.woff') format('woff');
+}
+
+

@@ -1,0 +1,43 @@
+<br/>
+<div class="mt-4">
+    <h3>Specification</h3>
+    <p><a href="https://en.wikipedia.org/wiki/Turing_machine" norel>Turing Machines on Wikipedia.</a></p>
+
+    <p>
+        Turing machines apply a finite set of states to a tape, which consists of bytes.
+        States have a name and a list of actions, which are evaluated in order.
+        Actions can alter the content of the tape (at the current head position) and move the head left/right.
+        As an additional feature, you can use 16 8-bit registers <code>r0</code>...<code>r9</code>,
+        <code>ra</code>-<code>rf</code>.
+    </p>
+    <p>Actions consist of:</p>
+    <ul>
+        <li>A condition (type: a single character or an expression)</li>
+        <li>A list of actions (type: <code>variable=&lt;expression&gt;</code>)</li>
+        <li>The successor state</li>
+        <li>Head movement (positive numbers: left, negative numbers: right)</li>
+    </ul>
+    <p>Expressions can use the special values <code>h</code> (char under the current head) and <code>r0-rf</code> (registers).</p>
+
+    <p>&nbsp;</p>
+
+    <p>Example: implement <code>strlen</code> (and write the result after the string)</p>
+    <ol>
+        <li>
+            State <code>C</code>, actions:
+            <ul>
+                <li>condition <code>\x00</code>, no actions, successor <code>W</code>, head 1</li>
+                <li>no condition, action <code>r0=r0+1</code>, successor <code>C</code>, head 1</li>
+            </ul>
+        </li>
+        <li>
+            State <code>W</code>, actions:
+            <ul>
+                <li>no condition, action <code>h=r0</code>, successor <code>E</code>, head 0</li>
+            </ul>
+        </li>
+        <li>
+            State <code>E</code>, no actions
+        </li>
+    </ol>
+</div>

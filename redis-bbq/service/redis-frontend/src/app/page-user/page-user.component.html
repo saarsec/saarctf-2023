@@ -1,0 +1,99 @@
+<app-error-list [list]="errors"></app-error-list>
+
+<div *ngIf="userInfo">
+    <div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+        <div class="card-header bg-opacity-100 bg-dark">
+            <h5 class="card-title mt-1">Welcome, {{userInfo.name}}</h5>
+        </div>
+
+        <div class="card-body" *ngIf="redis.currentUserIsNew">
+            <p class="card-text">We see you're new here. Want to be listed on our front page?</p>
+            <p class="card-text text-center">
+                <button class="btn btn-lg btn-outline-primary" (click)="announceMe()">Announce me to the world!</button>
+            </p>
+        </div>
+
+        <table class="table align-middle">
+            <tbody class="border-top">
+            <tr>
+                <td>Your favorite dishes:</td>
+                <td *ngIf="userInfo.dishes" class="userinfo">{{userInfo.dishes}}</td>
+                <td *ngIf="!userInfo.dishes">
+                    <form *ngIf="!userInfo.dishes">
+                        <div class="input-group">
+                            <textarea class="form-control" id="dishes" name="dishes" [(ngModel)]="dishes"></textarea>
+                            <button type="submit" class="btn btn-primary" (click)="store('dishes', dishes)">Save</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>You're good at cooking:</td>
+                <td *ngIf="userInfo.dishes_cooked" class="userinfo">{{userInfo.dishes_cooked}}</td>
+                <td *ngIf="!userInfo.dishes_cooked">
+                    <form>
+                        <div class="input-group">
+                            <textarea class="form-control" id="dishes_cooked" name="dishes_cooked" [(ngModel)]="dishes_cooked"></textarea>
+                            <button type="submit" class="btn btn-primary" (click)="store('dishes_cooked', dishes_cooked)">Save</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="card-body">
+            <p class="card-text">Complete your profile, then create your next barbecue party!</p>
+            <div class="text-center">
+                <button class="btn btn-lg btn-primary" (click)="newParty()">Start Your Next Party!</button>
+            </div>
+        </div>
+    </div>
+
+
+    <app-error-list [list]="errorFireFighter"></app-error-list>
+    <div class="card mt-5 mb-5 bg-dark bg-opacity-75">
+        <div class="card-header bg-opacity-100 bg-dark">
+            <h5 class="card-title mt-1">Firefighters wanted!</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">Sometimes a barbecue goes wrong, and the fires get out of control. Then we need you!</p>
+            <p class="card-text">Are you a firefighter? Tell us where you are, we'll inform you if it's burning near you!</p>
+        </div>
+
+        <div *ngIf="userInfo.watch_locations && userInfo.watch_locations.length > 0" class="card-body">
+            <div class="bg-success p-1 rounded mb-3" *ngIf="alarms.length == 0">
+                <div class="spinner-border spinner-border-sm" role="status"></div>
+                No alarms, everything is calm.
+                Watching actively for fires...
+            </div>
+            <div class="bg-danger p-2 rounded mb-3" *ngFor="let alarm of alarms">
+                ALARM: A fire in <strong>{{alarm.location}}, {{alarm.country}}</strong> is getting out of control.
+                Burning: <strong>{{alarm.content}}</strong>
+            </div>
+            <p class="card-text">You are already watching here:
+                <span *ngFor="let loc of userInfo.watch_locations" style="margin-right: 1rem"><em>{{loc.location}}</em> in <em>{{loc.country}}</em></span>
+            </p>
+        </div>
+
+        <div class="card-body">
+        <form>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="ffCountry" name="ffCountry" [(ngModel)]="ffCountry" placeholder="Country">
+                <label for="ffCountry" class="form-label">Your Country</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" id="ffLocation" name="ffLocation" [(ngModel)]="ffLocation" placeholder="Location">
+                <label for="ffLocation" class="form-label">Your Location</label>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="registerFirefighter(ffCountry, ffLocation)">Register Watch Location</button>
+        </form>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="spinner-border text-primary" role="status" *ngIf="!userInfo">
+    <span class="visually-hidden">Loading...</span>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Test your Turing Machine &quot;{{.machine.Name}}&quot;</h1>
+    <p><a href="/machines/{{.id}}">#{{.id}}</a></p>
+    <br/>
+
+    {{if .output}}
+    <div class="card">
+        <div class="card-header">Program output</div>
+        <div class="card-body">
+            <pre>{{.output}}</pre>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    {{end}}
+
+    <form method="POST" action="/machine/run/{{.id}}">
+        <input type="hidden" name="ident" value="{{.id}}"/>
+        <div class="mb-3">
+            <label for="tape" class="form-label">Initial Tape (hex)</label>
+            <textarea name="tape" id="tape" class="form-control">{{.tape}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary" name="action" value="program">Test Program</button>
+        <button type="submit" class="btn btn-outline-primary" name="action" value="run">Run</button>
+    </form>
+</div>

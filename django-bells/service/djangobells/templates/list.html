@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Wishes List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://media.gettyimages.com/id/1278304109/de/vektor/weihnachten-schneeflocke-hintergrund-nahtloses-muster.jpg?s=2048x2048&w=gi&k=20&c=NJMX4AvxLB9YtAhZQdlt3U3cK22TWTbUZpA648TMWD4=');
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #wishes {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .wish-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        /* Style for the navigation menu */
+        #menu {
+            background-color: rgba(51, 51, 51, 0.0);
+            color: #fff;
+            padding: 10px;
+        }
+
+        #menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #menu ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="/">Create Post</a></li>
+            <li><a href="/list">List Posts</a></li>
+        </ul>
+    </div>
+    <div id="container">
+        <h1>Christmas Wishes List</h1>
+        <div id="wishes">
+            {% for id, data in wishes %}
+            <div class="wish-item">
+                <strong>ID: </strong> {{id}}<br>
+                <strong>Wish: </strong>{{data.text}}<br>
+                <strong>Timestamp: </strong>{{data.stamp}}<br>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

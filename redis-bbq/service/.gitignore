@@ -1,0 +1,14 @@
+/redismodule.h
+/*.so
+/redis-5.*
+/redis-6.*
+/redis-7.*
+/*.rdb
+/*.aof
+/users.acl
+/__pycache__/
+/redisbbq-frontend
+/admin-password.txt
+/data
+/appendonlydir
+/.gdb_history

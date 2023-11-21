@@ -1,0 +1,4 @@
+bg0: https://de.m.wikipedia.org/wiki/Datei:Mist_over_a_dark_forest_(Unsplash).jpg
+bg1: https://wallhere.com/de/wallpaper/788895
+bg2: https://pixabay.com/de/photos/wald-nacht-landschaft-fantasie-5167332/
+campfire: https://commons.wikimedia.org/wiki/File:Campfire_at_RMP_.jpg

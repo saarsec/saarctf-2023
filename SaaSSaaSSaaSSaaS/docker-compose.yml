@@ -1,0 +1,12 @@
+---
+
+version: "2"
+
+services:
+  service:
+    image: "saarsec/saassaassaassaas"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "24929:24929"
