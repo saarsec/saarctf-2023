@@ -31,7 +31,7 @@ To run an exploit: `python3 exploit_file.py <ip> [<flag-id>]`
 ## Services
 - [Django Bells](./django-bells) | [Writeup](https://saarsec.rocks/2023/11/18/saarCTF-djangobells.html)
 - [German Telework](./german-telework) | [Writeup](https://saarsec.rocks/2023/11/20/saarCTF-German-Telework.html)
-- [Pasteable](./pasteable) | [Writeup]([./pasteable/exploits](https://saarsec.rocks/2023/11/25/saarCTF-Pasteable.html))
+- [Pasteable](./pasteable) | [Writeup](https://saarsec.rocks/2023/11/25/saarCTF-Pasteable.html)
 - [RedisBBQ](./redis-bbq) | [Service Explanation](./redis-bbq/README.md)
 - [SaaSSaaSSaaSSaaS](./SaaSSaaSSaaSSaaS) | [Writeup](https://saarsec.rocks/2023/11/19/saarCTF-SaaSSaaSSaaSSaaS.html)
 - [TuringMachines](./turing-machines) | [Exploit Walkthrough](./turing-machines/exploits/README.md)
